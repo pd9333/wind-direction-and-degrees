@@ -1,18 +1,20 @@
 export function windDirectionFromDegree(degree) {
-  if (degree >= 348.75 || degree < 11.25) return "N"
-  else if (degree >= 11.25 && degree < 33.75) return "NNE";
-  else if (degree >= 33.75 && degree < 56.25) return "NE";
-  else if (degree >= 56.25 && degree < 78.75) return "ENE";
-  else if (degree >= 78.75 && degree < 101.25) return "E";
-  else if (degree >= 101.25 && degree < 123.75) return "ESE";
-  else if (degree >= 123.75 && degree < 146.25) return "SE";
-  else if (degree >= 146.25 && degree < 168.75) return "SSE";
-  else if (degree >= 168.75 && degree < 191.25) return "S";
-  else if (degree >= 191.25 && degree < 213.75) return "SSW";
-  else if (degree >= 213.75 && degree < 236.25) return "SW";
-  else if (degree >= 236.25 && degree < 258.75) return "WSW";
-  else if (degree >= 258.75 && degree < 281.25) return "W";
-  else if (degree >= 281.25 && degree < 303.75) return "WNW";
-  else if (degree >= 303.75 && degree < 326.25) return "NW";
-  else if (degree >= 326.25 && degree < 348.75) return "NNW";
+  degree = (degree + 11.25) % 360;
+
+  if (degree < 22.5) return "N";
+  else if (degree >= 22.5 && degree < 45) return "NNE";
+  else if (degree >= 45 && degree < 67.5) return "NE";
+  else if (degree >= 67.5 && degree < 90) return "ENE";
+  else if (degree >= 90 && degree < 112.5) return "E";
+  else if (degree >= 112.5 && degree < 135) return "ESE";
+  else if (degree >= 135 && degree < 157.5) return "SE";
+  else if (degree >= 157.5 && degree < 180) return "SSE";
+  else if (degree >= 180 && degree < 202.5) return "S";
+  else if (degree >= 202.5 && degree < 225) return "SSW";
+  else if (degree >= 225 && degree < 247.5) return "SW";
+  else if (degree >= 247.5 && degree < 270) return "WSW";
+  else if (degree >= 270 && degree < 292.5) return "W";
+  else if (degree >= 292.5 && degree < 315) return "WNW";
+  else if (degree >= 315 && degree < 337.5) return "NW";
+  else if (degree >= 337.5) return "NNW";
 }
