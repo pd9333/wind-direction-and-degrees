@@ -13,7 +13,22 @@ export function windDirectionFromDegree(degree) {
     "S", "SSW", "SW", "WSW",
     "W", "WNW", "NW", "NNW",
   ];
-  for (let i = 0; i < endingDegrees.length; i++) {
-    if (degree < endingDegrees[i]) return windDirections[i];
+  const i = binarySearchFindHeadOfSecondHalf(endingDegrees.length, i => {
+    return degree < endingDegrees[i];
+  });
+  return windDirections[i];
+}
+
+function binarySearchFindHeadOfSecondHalf(size, isSecondHalf) {
+  let begin = 0;
+  let end = size;
+  while (begin < end) {
+    let mid = Math.floor((begin + end) / 2);
+    if (isSecondHalf(mid)) {
+      end = mid;
+    } else {
+      begin = mid + 1;
+    }
   }
+  return begin;
 }
