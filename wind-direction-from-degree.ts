@@ -1,4 +1,4 @@
-function windDirectionFromDegree(degree) {
+export function windDirectionFromDegree(degree) {
   if (degree >= 348.75 && degree < 11.25) return "N"
   else if (degree >= 11.25 && degree < 33.75) return "NNE";
   else if (degree >= 33.75 && degree < 56.25) return "NE";
