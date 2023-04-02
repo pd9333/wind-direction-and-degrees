@@ -4,9 +4,10 @@ export const windDirections = [
   "S", "SSW", "SW", "WSW",
   "W", "WNW", "NW", "NNW",
 ];
+export const windDirectionSpan = 360 / windDirections.length;
 
 export function windDirectionFromDegree(degree) {
-  degree = (degree + 11.25) % 360;
+  degree = (degree + windDirectionSpan / 2) % 360;
   if (degree < 0) degree += 360;
-  return windDirections[Math.floor(degree / 22.5)];
+  return windDirections[Math.floor(degree / windDirectionSpan)];
 }
