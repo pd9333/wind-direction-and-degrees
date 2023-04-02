@@ -1,20 +1,19 @@
 export function windDirectionFromDegree(degree) {
   degree = (degree + 11.25) % 360;
 
-  if (degree < 22.5) return "N";
-  if (degree < 45) return "NNE";
-  if (degree < 67.5) return "NE";
-  if (degree < 90) return "ENE";
-  if (degree < 112.5) return "E";
-  if (degree < 135) return "ESE";
-  if (degree < 157.5) return "SE";
-  if (degree < 180) return "SSE";
-  if (degree < 202.5) return "S";
-  if (degree < 225) return "SSW";
-  if (degree < 247.5) return "SW";
-  if (degree < 270) return "WSW";
-  if (degree < 292.5) return "W";
-  if (degree < 315) return "WNW";
-  if (degree < 337.5) return "NW";
-  if (degree < 360) return "NNW";
+  const endingDegrees = [
+    22.5, 45, 67.5, 90,
+    112.5, 135, 157.5, 180,
+    202.5, 225, 247.5, 270,
+    292.5, 315, 337.5, 360,
+  ];
+  const windDirections = [
+    "N", "NNE", "NE", "ENE",
+    "E", "ESE", "SE", "SSE",
+    "S", "SSW", "SW", "WSW",
+    "W", "WNW", "NW", "NNW",
+  ];
+  for (let i = 0; i < endingDegrees.length; i++) {
+    if (degree < endingDegrees[i]) return windDirections[i];
+  }
 }
