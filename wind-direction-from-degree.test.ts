@@ -1,16 +1,10 @@
 import {describe, expect, it} from "vitest";
-import {windDirectionFromDegree} from "./wind-direction-from-degree";
+import {windDirectionFromDegree, windDirections} from "./wind-direction-from-degree";
 
 const spanPrecision = 0.01;
 
 describe("windDirectionFromDegree", () => {
   it("should recognize wind from all degrees", () => {
-    const windDirections = [
-      "N", "NNE", "NE", "ENE",
-      "E", "ESE", "SE", "SSE",
-      "S", "SSW", "SW", "WSW",
-      "W", "WNW", "NW", "NNW",
-    ]
     const spannedDegreesOfADirection = 360 / windDirections.length;
     const startingDegree = 360 - spannedDegreesOfADirection / 2;
     for (let i = 0; i < windDirections.length; i++) {
