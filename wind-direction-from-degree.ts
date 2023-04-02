@@ -1,16 +1,18 @@
-if (wind_deg >= 348.75 && wind_deg < 11.25) wind_direction.innerText = "N"
-else if (wind_deg >= 11.25 && wind_deg < 33.75) wind_direction.innerText = "NNE";
-else if (wind_deg >= 33.75 && wind_deg < 56.25) wind_direction.innerText = "NE";
-else if (wind_deg >= 56.25 && wind_deg < 78.75) wind_direction.innerText = "ENE";
-else if (wind_deg >= 78.75 && wind_deg < 101.25) wind_direction.innerText = "E";
-else if (wind_deg >= 101.25 && wind_deg < 123.75) wind_direction.innerText = "ESE";
-else if (wind_deg >= 123.75 && wind_deg < 146.25) wind_direction.innerText = "SE";
-else if (wind_deg >= 146.25 && wind_deg < 168.75) wind_direction.innerText = "SSE";
-else if (wind_deg >= 168.75 && wind_deg < 191.25) wind_direction.innerText = "S";
-else if (wind_deg >= 191.25 && wind_deg < 213.75) wind_direction.innerText = "SSW";
-else if (wind_deg >= 213.75 && wind_deg < 236.25) wind_direction.innerText = "SW";
-else if (wind_deg >= 236.25 && wind_deg < 258.75) wind_direction.innerText = "WSW";
-else if (wind_deg >= 258.75 && wind_deg < 281.25) wind_direction.innerText = "W";
-else if (wind_deg >= 281.25 && wind_deg < 303.75) wind_direction.innerText = "WNW";
-else if (wind_deg >= 303.75 && wind_deg < 326.25) wind_direction.innerText = "NW";
-else if (wind_deg >= 326.25 && wind_deg < 348.75) wind_direction.innerText = "NNW";
+function windDirectionFromDegree(degree) {
+  if (degree >= 348.75 && degree < 11.25) return "N"
+  else if (degree >= 11.25 && degree < 33.75) return "NNE";
+  else if (degree >= 33.75 && degree < 56.25) return "NE";
+  else if (degree >= 56.25 && degree < 78.75) return "ENE";
+  else if (degree >= 78.75 && degree < 101.25) return "E";
+  else if (degree >= 101.25 && degree < 123.75) return "ESE";
+  else if (degree >= 123.75 && degree < 146.25) return "SE";
+  else if (degree >= 146.25 && degree < 168.75) return "SSE";
+  else if (degree >= 168.75 && degree < 191.25) return "S";
+  else if (degree >= 191.25 && degree < 213.75) return "SSW";
+  else if (degree >= 213.75 && degree < 236.25) return "SW";
+  else if (degree >= 236.25 && degree < 258.75) return "WSW";
+  else if (degree >= 258.75 && degree < 281.25) return "W";
+  else if (degree >= 281.25 && degree < 303.75) return "WNW";
+  else if (degree >= 303.75 && degree < 326.25) return "NW";
+  else if (degree >= 326.25 && degree < 348.75) return "NNW";
+}
