@@ -1,0 +1,8 @@
+#+title: Wind Direction and Degrees
+This is the repository for [[https://pd9333.com/posts/wind-direction-and-degrees][this post]].
+
+To run the test:
+#+begin_src sh
+  npm install
+  npm run test
+#+end_src
