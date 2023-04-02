@@ -1,6 +1,6 @@
 export function windDirectionFromDegree(degree) {
   degree = (degree + 11.25) % 360;
-
+  if (degree < 0) degree += 360;
   const windDirections = [
     "N", "NNE", "NE", "ENE",
     "E", "ESE", "SE", "SSE",
